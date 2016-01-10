@@ -3,14 +3,17 @@ class ItemsController < ApplicationController
 
 	before_filter :find_item, only: [:show, :edit, :update, :destroy, :upvote,:subtract]
 	before_filter :check_if_admin, only: [:edit, :update, :create, :new, :destroy]
+	helper_method :sort_column, :sort_direction
 
 
 	def index 
-		@items=Item
-		@items=@items.where("price >= ?", params[:price_from] ) if params[:price_from] 
-		@items=@items.order("price DESC")
-		@items=@items.where("created_at >=?", 1.day.ago) 		if params[:today]
-		@items=@items.where("votes_count =?", params[:votes_from] ) if params[:votes_from] 
+		
+		@items = Item.order(sort_column + " " + sort_direction)
+		# @items=@items.where("price >= ?", params[:price_from] ) if params[:price_from] 
+		# @items=@items.order("price DESC")
+		# @items=@items.where("created_at >=?", 1.day.ago) 		if params[:today]
+		# @items=@items.where("votes_count =?", params[:votes_from] ) if params[:votes_from] 
+		# @items = @items.order(sort_column + " " + sort_direction)
 
 	end
 
@@ -31,7 +34,7 @@ class ItemsController < ApplicationController
 	def create
 		@item = Item.create(items_params)
 		if @item.errors.empty?
-			#flash_success("Item successfully created")
+			flash_success("Item successfully created")
 			redirect_to item_path(@item)
 		else
 			#flash_error("You made mistakes in yor form!")
@@ -43,7 +46,7 @@ class ItemsController < ApplicationController
 		
 		@item.update_attributes(items_params)
 		if @item.errors.empty?
-			#flash_success("Item successfully updater")
+			flash_success("Item successfully updater")
 			redirect_to item_path(@item)
 		else
 			#flash_error("You made mistakes in yor form!")
@@ -73,6 +76,8 @@ class ItemsController < ApplicationController
  		render "index"
  	end
 
+ 	
+
 	private
 
 	def items_params
@@ -86,6 +91,14 @@ class ItemsController < ApplicationController
 		@item = Item.where(id: params[:id]).first
 		render_404 unless @item 
 	end
+
+	def sort_column
+    	Item.column_names.include?(params[:sort]) ? params[:sort] : "price"
+  	end
+  
+  	def sort_direction
+    	%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  	end
 
 	
 end

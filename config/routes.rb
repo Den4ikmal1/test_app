@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     resources :items
   end
@@ -6,8 +6,11 @@ Rails.application.routes.draw do
       get :upvote,    on: :member
       get :subtract,  on: :member
       get :expensive, on: :collection
+      
     
   end
+  
+  
   
 
 

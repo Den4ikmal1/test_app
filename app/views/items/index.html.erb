@@ -9,12 +9,14 @@
 <% else %>
 <table class ="items">
 <tr>
-	<th id="nam"><%= Item.human_attribute_name(:id) %></th>
-	<th id="nam"><%= Item.human_attribute_name(:name) %></th>
-	<th id="nam"><%= Item.human_attribute_name(:price) %></th>
-	<th id="nam"><%= Item.human_attribute_name(:delete) %></th>
-	<th id="nam"><%= Item.human_attribute_name(:created_at) %></th>
-	<th id="nam"><%= Item.human_attribute_name(:raiting) %></th>
+	<th id="nam"><%= sortable 'id' %></th>
+	<th id="nam"><%= sortable 'name' %></th>
+	<th id="nam"><%= sortable 'price' %></th>
+	<th id="nam"><%= sortable "created_at" %></th>
+	<th id="nam"><%= sortable 'votes_count' ,'Raiting' %></th>
+	<th id="nam">Delete/Edit</th>
+	
+
 	
 </tr>
 
@@ -23,11 +25,14 @@
 	<tr>
 		<td><%=  i.id %></td>
 		<td><%=  link_to i.name, item_path(i) %>
-		<p><%=  image_tag i.avatar,  width: '120px', height: '95px'  if i.avatar %></p></td>
+		<p><%=  link_to (image_tag i.avatar),item_path(i)%></p></td>
 		<td><%=  i.price %> uan </td>
-		<td ><%=  button_to "Delete", i, method: :delete, data: { confirm: "are you sure?"},  class: 'btn btn-danger' %></td>
 		<td><%=i.created_at %></td>
 		<td>Raiting: <%= i.votes_count %>, <%= link_to "+", upvote_item_path(i),class: 'btn btn-success'  %> <%= link_to " -", subtract_item_path(i), class: 'btn btn-primary'%> </td>
+		<td ><%=  button_to "Delete", i, method: :delete, data: { confirm: "are you sure?"},  class: 'btn btn-danger' %>
+			<br/>
+			<p><%= link_to edit_item_path(i), class: 'btn btn-warning' do %>
+ 			 <i class="glyphicon glyphicon-pencil"></i> Edit <% end %> </p>
 		
 
 	</tr>
