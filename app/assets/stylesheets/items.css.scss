@@ -1,0 +1,40 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body{
+	margin-left:40px;
+	padding-right:300px;
+	
+
+}
+#nam{
+  text-align: center;
+}
+
+table,  td {
+	text-align: center;
+  width:1000px;
+  text-aligen: center;
+  border: 2px solid black;
+  border-collapse:collapse;
+  
+}
+
+
+
+th {
+
+
+  background-color: #DDD;
+
+}
+
+th, td {
+
+
+  border: 1px solid #AAA;
+  padding:  3px;
+}

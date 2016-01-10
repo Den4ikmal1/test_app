@@ -1,0 +1,11 @@
+<h1><%= @item.name %> </h1>
+ 
+
+<ul>
+
+	<li><h3> <%= t("item.price") %></h3><%= @item.price %> uan.</li>
+	<li><h3><%= t("item.weight") %></h3> <%= @item.weight %> kg.</li>
+	<li><h3> <%= t("item.avatar") %> </h3><%= image_tag @item.avatar.url(:medium) %></li>
+</ul>	
+	
+

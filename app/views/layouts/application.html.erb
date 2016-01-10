@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="nav">
+	Language:
+	<%= link_to_unless_current "English", locale: "en" %> |
+	<%= link_to_unless_current "Russian", locale: "ru" %>
+</div>
+<div class="flasherror">
+
+<p> <%= flash[:error]%></p>
+</div>
+<div class="flashsuccess">
+<p> <%= flash[:success]%></p>
+</div>
+<%= yield %>
+
+</body>
+</html>

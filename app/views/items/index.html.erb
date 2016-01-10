@@ -1,0 +1,39 @@
+<h1><%=Item.human_attribute_name(:items)%> : </h1>
+
+
+
+<body>
+</br>
+<% if @items.empty? %>
+	<b>No items in store</b>
+<% else %>
+<table class ="items">
+<tr>
+	<th id="nam"><%= Item.human_attribute_name(:id) %></th>
+	<th id="nam"><%= Item.human_attribute_name(:name) %></th>
+	<th id="nam"><%= Item.human_attribute_name(:price) %></th>
+	<th id="nam"><%= Item.human_attribute_name(:delete) %></th>
+	<th id="nam"><%= Item.human_attribute_name(:created_at) %></th>
+	<th id="nam"><%= Item.human_attribute_name(:raiting) %></th>
+	
+</tr>
+
+
+<% @items.each do |i| %>
+	<tr>
+		<td><%=  i.id %></td>
+		<td><%=  link_to i.name, item_path(i) %>
+		<p><%=  image_tag i.avatar,  width: '120px', height: '95px'  if i.avatar %></p></td>
+		<td><%=  i.price %> uan </td>
+		<td ><%=  button_to "Delete", i, method: :delete, data: { confirm: "are you sure?"},  class: 'btn btn-danger' %></td>
+		<td><%=i.created_at %></td>
+		<td>Raiting: <%= i.votes_count %>, <%= link_to "+", upvote_item_path(i),class: 'btn btn-success'  %> <%= link_to " -", subtract_item_path(i), class: 'btn btn-primary'%> </td>
+		
+
+	</tr>
+
+	
+<% end -%>
+</table>
+ <% end -%>
+ </body>
