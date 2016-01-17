@@ -1,0 +1,46 @@
+<h1><%=Item.human_attribute_name(:items)%> : </h1>
+
+
+
+<body>
+</br>
+<% if @items.empty? %>
+	<b>No items in store</b>
+<% else %>
+<table class ="table table-bordered table-striped">
+<tr>
+	<th ><%= sortable 'id' %></th>
+	<th ><%= sortable 'name' %></th>
+	<th ><%= sortable 'price' %></th>
+	<th ><%= sortable "created_at" %></th>
+	<th ><%= sortable 'votes_count' ,'Raiting' %></th>
+	<th >Delete</th>
+	<th>Edit</th>
+	
+
+	
+</tr>
+
+
+<% @items.each do |i| %>
+	<tr id="item_<%=i.id%>">
+		<td><%=  i.id %></td>
+		<td><%=  link_to i.name, item_path(i) %>
+		<p><%=  link_to (image_tag i.avatar), item_path(i)%></p></td>
+		<td><%=  i.price %> uan </td>
+		<td><%=i.created_at %></td>
+		<td>Raiting: <%= i.votes_count %>, <%= link_to "+", upvote_item_path(i),class: 'btn btn-success'%>
+		 <%= link_to " -", subtract_item_path(i), class: 'btn btn-primary'%> </td>
+		<td ><%=link_to "Delete", i, method: :delete,   class: 'btn btn-danger', remote: true  %> </td>
+			
+		<td><%= link_to edit_item_path(i), class: 'btn btn-info' do %>
+ 			 <i class="glyphicon glyphicon-pencil"></i> Edit <% end %> </td>
+		
+
+	</tr>
+
+	
+<% end -%>
+</table>
+ <% end -%>
+ </body>

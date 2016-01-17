@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RoR </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'New item', new_item_path %> </li>
+      <li><%=link_to 'Home', index_path %> </li> 
+      <li><%= link_to 'Back', :back %></li>
+    </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <li> Signed in as <%= current_user.email %>. Not you?</li>
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+         <% else %>
+         <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+          <li> <%= link_to "Sign in", new_user_session_path %> <% end %> </li>
+    </ul>
+  </div>
+</nav>
+
+<body>
+
+
+<div class="container">
+      
+      <%= flash_messages %>
+  
+ 
+  
+
+ <div id="nav">
+	Language:
+	<%= link_to_unless_current "English", locale: "en" %> |
+	<%= link_to_unless_current "Russian", locale: "ru" %>
+</div>
+ 
+      <%= yield %>
+
+    
+  </div>
+
+
+
+<!-- <div class="newitem">
+</br>Menu: 
+<p><%= link_to 'New item', new_item_path %> |
+<%= link_to 'Home', index_path %> |
+ <%= link_to 'Back', :back %></p>
+</div> -->
+</body>
+
+</html>

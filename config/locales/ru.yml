@@ -1,0 +1,22 @@
+
+
+ru:
+  item:
+    price: "Цена"
+    weight: "Вес"
+    avatar: "Изображение"
+  activerecord:
+    models:
+      item: 'Товар'
+    attributes:
+      item:
+        price: "Цена"
+        name: "Название"
+        weight: "Вес"
+        avatar: "Изображение"
+        id:     "Номер"
+        delete:  "Удаление"
+        created_at: "Создан в"
+        raiting: "Рейтинг"
+        items: "Товары"
+    
