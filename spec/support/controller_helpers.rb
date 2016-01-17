@@ -1,6 +1,3 @@
-
-
-
 module ControllerHelpers
   def login_with(user = double('user'), scope = :user)
     current_user = "current_#{scope}".to_sym

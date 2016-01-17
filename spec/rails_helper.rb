@@ -48,12 +48,12 @@ RSpec.configure do |config|
   ActiveRecord::Migration.maintain_test_schema!
   config.include Devise::TestHelpers, type: :controller
   config.include Warden::Test::Helpers
-  #
+  config.include FactoryGirl::Syntax::Methods
+   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  config.include FactoryGirl::Syntax::Methods
-  # Filter lines from Rails gems in backtraces.
+   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
