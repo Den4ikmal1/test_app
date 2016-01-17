@@ -2,11 +2,9 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
  	before_filter :set_locale
-<<<<<<< HEAD
+
  	before_filter :authenticate_user!, except: [:show, :index]
 
-=======
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 
  	private
 
@@ -39,11 +37,7 @@ class ApplicationController < ActionController::Base
   		{ locale: I18n.locale }.merge options
 	end
 
-<<<<<<< HEAD
-	
 
-=======
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 
 	protect_from_forgery with: :exception
 end

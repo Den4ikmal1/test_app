@@ -9,23 +9,16 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
-<<<<<<< HEAD
+
  *= require devise_bootstrap_views
-=======
  *
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
+
  *= require_tree .
  *= require_self
  */
  @import "bootstrap";
 
-<<<<<<< HEAD
-body {
-	
 
- 
-  
-}
 
 .navbar {
 
@@ -33,66 +26,10 @@ body {
  
 
     }
-=======
 
 
-body {
-  padding-left: 40px;
-  
-}
-#nav{
-padding-top:25px;
-	float:right;
-	
-	
-}
-
-.newitem{
-	font-size:18px;
-}
-
-.flashsuccess
-{
-
-	color:green;
-	font-size:24px;
-}
-.items th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
-.items th .asc {
-  background-image: url(/images/up_arrow.gif);
-}
-
-.items th .desc {
-  background-image: url(/images/down_arrow.gif);
-}
-
-#table th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
 
 
-#table th .asc {
-  background-image: url(/images/up_arrow.gif);
-}
 
-#table th .desc {
-  background-image: url(/images/down_arrow.gif);
-}
-.flashsuccess:hover
-{
-    margin-left:120px;
-	color:green;
-	font-size:28px;
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
-}
 
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
+

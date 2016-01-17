@@ -5,7 +5,6 @@ module ApplicationHelper
  	 direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
  	 link_to title, {:sort => column, :direction => direction}, {:class => css_class}
   end
-<<<<<<< HEAD
 
 
   def bootstrap_class_for flash_type
@@ -24,8 +23,3 @@ module ApplicationHelper
   end
 end
 	
-
-=======
-	
-end
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd

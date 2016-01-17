@@ -19,11 +19,10 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-<<<<<<< HEAD
+
 gem 'devise-bootstrap-views'
 
-=======
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
+
 gem 'paperclip'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -34,10 +33,9 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
-<<<<<<< HEAD
+
 gem 'devise'
-=======
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,11 +52,7 @@ end
 
 group :test do
 	gem 'rspec-rails'
-<<<<<<< HEAD
 	gem 'factory_girl_rails'
-=======
-	gem 'factory_girl'
->>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 end
 
 group :development do
