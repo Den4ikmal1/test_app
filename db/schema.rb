@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160117132428) do
+=======
+ActiveRecord::Schema.define(version: 20160108220539) do
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 
   create_table "blog_posts", force: :cascade do |t|
     t.string   "title"
@@ -26,6 +30,14 @@ ActiveRecord::Schema.define(version: 20160117132428) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "carts_items", id: false, force: :cascade do |t|
+    t.integer "cart_id"
+    t.integer "item_id"
+  end
+
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
@@ -49,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160117132428) do
     t.datetime "avatar_updated_at"
   end
 
+<<<<<<< HEAD
   add_index "items", ["name"], name: "index_items_on_name"
   add_index "items", ["price"], name: "index_items_on_price"
 
@@ -57,11 +70,16 @@ ActiveRecord::Schema.define(version: 20160117132428) do
     t.integer "item_id"
   end
 
+=======
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.float    "total"
+=======
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
   end
 
   create_table "positions", force: :cascade do |t|
@@ -76,6 +94,7 @@ ActiveRecord::Schema.define(version: 20160117132428) do
     t.string   "login"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -91,4 +110,8 @@ ActiveRecord::Schema.define(version: 20160117132428) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+=======
+  end
+
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 end

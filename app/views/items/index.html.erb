@@ -7,6 +7,7 @@
 <% if @items.empty? %>
 	<b>No items in store</b>
 <% else %>
+<<<<<<< HEAD
 <table class ="table table-bordered table-striped">
 <tr>
 	<th ><%= sortable 'id' %></th>
@@ -16,6 +17,16 @@
 	<th ><%= sortable 'votes_count' ,'Raiting' %></th>
 	<th >Delete</th>
 	<th>Edit</th>
+=======
+<table class ="items">
+<tr>
+	<th id="nam"><%= sortable 'id' %></th>
+	<th id="nam"><%= sortable 'name' %></th>
+	<th id="nam"><%= sortable 'price' %></th>
+	<th id="nam"><%= sortable "created_at" %></th>
+	<th id="nam"><%= sortable 'votes_count' ,'Raiting' %></th>
+	<th id="nam">Delete/Edit</th>
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 	
 
 	
@@ -23,6 +34,7 @@
 
 
 <% @items.each do |i| %>
+<<<<<<< HEAD
 	<tr id="item_<%=i.id%>">
 		<td><%=  i.id %></td>
 		<td><%=  link_to i.name, item_path(i) %>
@@ -35,6 +47,19 @@
 			
 		<td><%= link_to edit_item_path(i), class: 'btn btn-info' do %>
  			 <i class="glyphicon glyphicon-pencil"></i> Edit <% end %> </td>
+=======
+	<tr>
+		<td><%=  i.id %></td>
+		<td><%=  link_to i.name, item_path(i) %>
+		<p><%=  link_to (image_tag i.avatar),item_path(i)%></p></td>
+		<td><%=  i.price %> uan </td>
+		<td><%=i.created_at %></td>
+		<td>Raiting: <%= i.votes_count %>, <%= link_to "+", upvote_item_path(i),class: 'btn btn-success'  %> <%= link_to " -", subtract_item_path(i), class: 'btn btn-primary'%> </td>
+		<td ><%=  button_to "Delete", i, method: :delete, data: { confirm: "are you sure?"},  class: 'btn btn-danger' %>
+			<br/>
+			<p><%= link_to edit_item_path(i), class: 'btn btn-warning' do %>
+ 			 <i class="glyphicon glyphicon-pencil"></i> Edit <% end %> </p>
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 		
 
 	</tr>

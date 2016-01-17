@@ -1,4 +1,5 @@
   Rails.application.routes.draw do
+<<<<<<< HEAD
 
   # get 'users/profile'
 
@@ -9,11 +10,17 @@
    
 
     end
+=======
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :items
+  end
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
     resources :items do
       get :upvote,    on: :member
       get :subtract,  on: :member
       get :expensive, on: :collection
       
+<<<<<<< HEAD
       end
   get 'index', to: 'items#index'
 
@@ -29,6 +36,13 @@
     root 'devise/sessions#new', as: :unauthenticated_root
   end
 end
+=======
+    
+  end
+  
+  
+  
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
 
 
   # The priority is based upon order of creation: first created -> highest priority.

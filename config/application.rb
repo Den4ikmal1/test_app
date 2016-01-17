@@ -21,10 +21,13 @@ module TestApp
     #config.i18n.default_locale = :ru
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+<<<<<<< HEAD
      config.generators do |g|
         g.test_framework  :rspec, fixtures: true, views: false
         g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+=======
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

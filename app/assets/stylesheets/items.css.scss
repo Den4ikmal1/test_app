@@ -5,6 +5,7 @@
 
 
 body{
+<<<<<<< HEAD
 
 	margin: 20px 0 0 40px;	
 
@@ -20,3 +21,42 @@ table img{
   height:115px;
 }
 
+=======
+	margin-left:40px;
+	padding-right:300px;
+	
+
+}
+#nam{
+  text-align: center;
+}
+
+
+table,  td {
+	text-align: center;
+  width:1000px;
+  text-aligen: center;
+  border: 2px solid black;
+  border-collapse:collapse;
+  
+}
+
+img{
+  width:110px;
+  height:95px;
+}
+
+th {
+
+
+  background-color: #DDD;
+
+}
+
+th, td {
+
+
+  border: 1px solid #AAA;
+  padding:  3px;
+}
+>>>>>>> 9a6e046fa20413fc904d033901be4c0ea820b9cd
