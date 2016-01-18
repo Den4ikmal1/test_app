@@ -20,10 +20,13 @@ class ItemsController < ApplicationController
 	def show
 
 		render_404 unless @item
+
 	end
 
 	def new
+
 		@item = Item.new
+
 	end
 
 	def edit
@@ -33,6 +36,7 @@ class ItemsController < ApplicationController
 
 
 	def create
+
 		@item = Item.create(items_params)
 		if @item.errors.empty?
 			flash_success("Item successfully created")
@@ -41,6 +45,7 @@ class ItemsController < ApplicationController
 			flash_error("You made mistakes in yor form!")
 			render "new"
 		end
+
 	end
 
 	def update
@@ -50,12 +55,10 @@ class ItemsController < ApplicationController
 			flash_success("Item successfully updater")
 			redirect_to item_path(@item)
 		else
-
 			flash_error("You made mistakes in yor form!")
-
-
 			render "edit"
 		end
+
 	end
 
 	def destroy
@@ -67,25 +70,29 @@ class ItemsController < ApplicationController
 			i.js   {}
 		end
 		ItemsMailer.item_destroyed(@item).deliver
+
 	end
 
 	
 	def upvote
 
-  		@item.increment!(:votes_count) 
-  		redirect_to action: "index"
+  	@item.increment!(:votes_count) 
+  	redirect_to action: "index"
 
  	end
 
  	def subtract
 
-  		@item.decrement!(:votes_count) 
-  		redirect_to action: "index"
+  	@item.decrement!(:votes_count) 
+  	redirect_to action: "index"
+
  	end
 
  	def expensive
+
  		@items = Item.where(:price => 100..200)
  		render "index"
+
  	end
 
  	
@@ -94,23 +101,29 @@ class ItemsController < ApplicationController
 
 	def items_params
 
-   		params.require(:item).permit(:name, :price, :real, :weight, :avatar)
+   	params.require(:item).permit(:name, :price, :real, :weight, :avatar)
 
 	end
 
 	
 	def find_item
+
 		@item = Item.where(id: params[:id]).first
 		render_404 unless @item 
+
 	end
 
 	def sort_column
-    	Item.column_names.include?(params[:sort]) ? params[:sort] : "price"
-  	end
+
+    Item.column_names.include?(params[:sort]) ? params[:sort] : "price"
   
-  	def sort_direction
-    	%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  	end
+  end
+  
+  def sort_direction
+
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  
+  end
 
 	
 end

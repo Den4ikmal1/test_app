@@ -30,7 +30,6 @@
 		<td>Raiting: <%= i.votes_count %>, <%= link_to "+", upvote_item_path(i),class: 'btn btn-success'%>
 		 <%= link_to " -", subtract_item_path(i), class: 'btn btn-primary'%> </td>
 		<td ><%=link_to "Delete", i, method: :delete,   class: 'btn btn-danger', remote: true  %> </td>
-			
 		<td><%= link_to edit_item_path(i), class: 'btn btn-info' do %>
  			 <i class="glyphicon glyphicon-pencil"></i> Edit <% end %> </td>
 <% end -%>

@@ -34,16 +34,15 @@
 <body>
 <div class="container">
     <%= flash_messages %>
- <div id="nav">
+<div id="nav">
 	Language:
 	<%= link_to_unless_current "English", locale: "en" %> |
 	<%= link_to_unless_current "Russian", locale: "ru" %>
-
 </div>
 
    <%= yield %>
 
 </div>
-</body>
 
+</body>
 </html>

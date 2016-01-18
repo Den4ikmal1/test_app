@@ -20,6 +20,8 @@ module ApplicationHelper
       flash.clear
     end
     nil
+
   end
+  
 end
 	
