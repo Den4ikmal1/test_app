@@ -18,11 +18,7 @@ gem 'arctica-autorization-rails-plugin', '~> 0.1'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-
 gem 'devise-bootstrap-views'
-
-
 gem 'paperclip'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -33,7 +29,6 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
-
 gem 'devise'
 
 # Use ActiveModel has_secure_password
@@ -58,7 +53,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

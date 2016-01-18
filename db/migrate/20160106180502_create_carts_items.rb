@@ -7,7 +7,6 @@ class CreateCartsItems < ActiveRecord::Migration
     	t.integer :item_id
 
     end
-
     drop_table :carts_items
 
   end

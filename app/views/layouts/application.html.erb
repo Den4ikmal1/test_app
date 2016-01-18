@@ -8,7 +8,7 @@
 </head>
 
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">RoR </a>
@@ -18,15 +18,14 @@
       <li><%=link_to 'Home', index_path %> </li> 
       <li><%= link_to 'Back', :back %></li>
     </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-        <li> Signed in as <%= current_user.email %>. Not you?</li>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-        <li> <%= link_to "Sign up", new_user_registration_path %> </li>
-        <li> <%= link_to "Sign in", new_user_session_path %> </li>
-        <% end %> 
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+      <li> Signed in as <%= current_user.email %>. Not you?</li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+      <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+      <li> <%= link_to "Sign in", new_user_session_path %> </li>
+      <% end %> 
     </ul>
   </div>
 </nav>
@@ -34,13 +33,14 @@
 <body>
 <div class="container">
     <%= flash_messages %>
-<div id="nav">
+
+  <div id="nav">
 	Language:
 	<%= link_to_unless_current "English", locale: "en" %> |
 	<%= link_to_unless_current "Russian", locale: "ru" %>
-</div>
+  </div>
 
-   <%= yield %>
+ <%= yield %>
 
 </div>
 

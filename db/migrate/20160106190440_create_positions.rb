@@ -8,7 +8,7 @@ class CreatePositions < ActiveRecord::Migration
     	t.integer :item_id
     	t.integer :quantity
       t.timestamps 
-    end
 
+    end
    end
 end
